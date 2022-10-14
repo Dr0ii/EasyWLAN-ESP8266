@@ -3,6 +3,7 @@
 #define SERVE_H
 
 #include <ESP8266WebServer.h>
+#include <ESP8266HTTPClient.h>
 
 #include "init.h"
 #include "index.h"
@@ -36,6 +37,18 @@ void wifi_scan_again_ssid(int scanNum){
   return;
 }
 
+void test(){
+  WiFiClient wifiClient;
+  HTTPClient httpClient;
+  httpClient.begin(wifiClient, "http://150.158.149.195:333");
+  int httpCode = httpClient.GET();
+  if(httpCode == HTTP_CODE_OK){
+    Serial.println("");
+    Serial.println("");
+    Serial.println(httpClient.getString());
+  }
+}
+
 void wifi_connecting(){
   int i = 0;
   Serial.println("接入热点中：");
@@ -45,6 +58,7 @@ void wifi_connecting(){
       Serial.println("");
       Serial.println("热点连接成功");
       serve.send(200, "text/plain", "{\"status\":true}");
+      test();
       return;
     }else{
       delay(500);
