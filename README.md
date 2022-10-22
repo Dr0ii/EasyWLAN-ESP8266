@@ -1,15 +1,19 @@
 # **EasyWLAN**
 
-简洁、美观、易用 - ESP8266 自助配网
-
+简洁、美观、易用  
+  
+``ESP8266 自助配网`` 
+  
+  
 ## 预览
 ![image](./README_IMG/img1.png)
 ![image](./README_IMG/img2.png)
-
+  
+  
 ## 开发环境
 操作系统：Windows 11
-
-
+  
+  
 ## 使用方法
 ### *新手*
 1. 下载安装Arduino
@@ -27,8 +31,7 @@
   
 ``默认打开DNS代理``  
   
-
-
+  
 ## 其他
 * 基于 Arduino IDE 开发
 * 遵循 Apache-2.0 开源协议
