@@ -7,7 +7,7 @@
 #include "serve.h"
 
 //AP（服务端）
-#define AP_SSID "动凡科技™"   //名称
+#define AP_SSID "EasyWLAN"   //名称
 #define AP_PASSWORD ""       //密码，空为不设置密码
 #define AP_MAX_CLIENT 1      //可接入数，最多4
 IPAddress IP(2,2,2,2);       //服务地址 （英文逗号隔开）
