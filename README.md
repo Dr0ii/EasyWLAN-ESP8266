@@ -6,8 +6,8 @@
   
   
 ## 预览
-![image](./README_IMG/img1.png)
-![image](./README_IMG/img2.png)
+![image](./src/img1.png)
+![image](./src/img2.png)
   
   
 ## 初衷
@@ -38,7 +38,7 @@
   
   
 ## 赞助
-![image](./README_IMG/img3.png)
+![image](./src/img3.png)
 
 
 ## 历史记录
