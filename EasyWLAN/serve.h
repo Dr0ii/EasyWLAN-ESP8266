@@ -1,4 +1,3 @@
-
 #ifndef SERVE_H
 #define SERVE_H
 
@@ -8,13 +7,14 @@
 #include "init.h"
 #include "index.h"
 
-ESP8266WebServer serve(80);
+ESP8266WebServer serve(80); // AP服务端口
 
-// STA（客户端）
-String STA_SSID;      //WiFi名称
-String STA_PASSWORD;  //WiFi密码
-String ScanResult;
+// STA（客户端）- ESP8266所连接的热点
+String STA_SSID;      // WiFi名称
+String STA_PASSWORD;  // WiFi密码
+String ScanResult; // SSID列表暂存
 
+// 扫描附近SSID
 void wifi_scan_again_ssid(int scanNum){
   ScanResult = "[";
   String type;
@@ -24,8 +24,7 @@ void wifi_scan_again_ssid(int scanNum){
   Serial.print("正在扫描附近WIFI热点：");
   for(int i = 0; i < scanNum; i++){
     WiFi.encryptionType(i) == ENC_TYPE_NONE ? type = "1" : type = "0";
-    WiFi.isHidden(i) ? hidden = "0" : hidden = "1";
-    ScanResult += "{\"ssid\":\"" + WiFi.SSID(i) + "\"," + "\"dbm\":\"" + WiFi.RSSI(i) + "\"," + "\"type\":\"" + type + "\"," +  "\"hidden\":\"" + hidden + "\"},";
+    ScanResult += "{\"ssid\":\"" + WiFi.SSID(i) + "\"," + "\"dbm\":\"" + WiFi.RSSI(i) + "\"," + "\"type\":\"" + type + "\"},";
     Serial.print(".");
   }
   Serial.println("");
@@ -37,6 +36,7 @@ void wifi_scan_again_ssid(int scanNum){
   return;
 }
 
+// 连接热点
 void wifi_connecting(){
   int i = 0;
   Serial.println("接入热点中：");
@@ -46,7 +46,6 @@ void wifi_connecting(){
       Serial.println("");
       Serial.println("热点连接成功");
       serve.send(200, "text/plain", "{\"status\":true}");
-      test();
       return;
     }else{
       delay(500);
@@ -59,20 +58,24 @@ void wifi_connecting(){
   return;
 }
 
+// 首页回调函数
 void www_configPage(){
   serve.send(200, "text/html", configPage);
   return;
 }
 
+// SSID列表回调函数
 void www_getData(){
   serve.send(200, "text/plain", ScanResult);
   return;
 }
 
+// SSID列表刷新函数
 void www_getNewData(){
   wifi_scan_again_ssid(WiFi.scanNetworks());
 }
 
+// 连接热点函数
 void www_handleData(){
   Serial.println("");
   Serial.print("SSID: ");
@@ -85,6 +88,7 @@ void www_handleData(){
   wifi_connecting();
 }
 
+// 服务初始化
 void wifi_serve_init(){
   serve.begin();
   serve.on("/", www_configPage);
