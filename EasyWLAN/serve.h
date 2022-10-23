@@ -1,3 +1,14 @@
+/*
+ *  serve.h
+ *
+ *  创建日期: 2022/10/23
+ *  作者: Dr0ii
+ *
+ *  说明：此文件为STA基础配置 及 服务配置
+ *
+ */
+
+
 #ifndef SERVE_H
 #define SERVE_H
 

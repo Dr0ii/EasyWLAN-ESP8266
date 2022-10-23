@@ -1,3 +1,14 @@
+/*
+ *  index.h
+ *
+ *  创建日期: 2022/10/23
+ *  作者: Dr0ii
+ *
+ *  说明：此文件为页面代码，已压缩
+ *
+ */
+
+
 #ifndef INDEX_H
 #define INDEX_H
 

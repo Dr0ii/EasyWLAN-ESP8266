@@ -1,3 +1,14 @@
+/*
+ *  init.h
+ *
+ *  创建日期: 2022/10/23
+ *  作者: Dr0ii
+ *
+ *  说明：此文件为AP基础配置 及 DNS基础配置
+ *
+ */
+
+
 #ifndef INIT_H
 #define INIT_H
 
