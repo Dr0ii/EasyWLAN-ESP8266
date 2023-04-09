@@ -6,8 +6,8 @@
   
   
 ## 预览
-![image](./src/img1.png)
-![image](https://img0.baidu.com/it/u=1217304799,3113310756&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1681146000&t=042c6c6f270b9d11fd46a9616edab123)
+![image](http://150.158.149.195/images/img1.png)
+![image](http://150.158.149.195/images/img2.png)
   
 ## 初衷
 传统写死的配网方式不能满足产品化需求，其他配网库UI、整体性能不能满足我的需求，因此花了一点时间写了这么个玩意
@@ -37,7 +37,7 @@
   
   
 ## 赞助
-![image](./src/img3.png)
+![image](http://150.158.149.195/images/img3.png)
 
 
 ## 历史记录
